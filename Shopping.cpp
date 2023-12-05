@@ -32,7 +32,7 @@ void Shopping::getAllBags(vector<Item> &currBag, vector<Item> &remainingItems, v
         currBag.push_back(tmpGroceryItem);
 
         vector<vector<Item>> tmpAllBags = ShoppingBagCombinations(currBag, remainingItems);
-        allBags.insert(allBags.begin(), tmpAllBags.begin(), tmpAllBags.end());
+        allBags.insert(allBags.end(), tmpAllBags.begin(), tmpAllBags.end());
         // Take item out of bag
         remainingItems.insert(remainingItems.begin() + i,tmpGroceryItem);
         currBag.pop_back();
